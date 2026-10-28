@@ -15,6 +15,6 @@ Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http
 | Horários | Não encontrados. Preencher `horarios`. |
 | Telefone fixo | `(35) 3523-2501` aparece na caixa e na listagem; já está no site. Confirmar se continua ativo. |
 | "Rosilane" | Nome impresso no logo da caixa. Confirmar se deve aparecer no site. |
-| Logo | Não há arquivo do logo; o site usa uma composição tipográfica. Pedir o arquivo original (vetor ou PNG). |
+| Logo | Extraído da foto da caixa (`assets/logo-800.png`, fundo transparente). Serve para a prévia; pedir o arquivo original em vetor para a versão final. |
 | Páscoa | Mostrada como coleção sazonal. Ao abrir uma campanha, mudar `pascoa.aberta` para `true`. |
 | Uso das fotos | Algumas mostram nomes de aniversariantes em topos de bolo. Confirmar autorização. |

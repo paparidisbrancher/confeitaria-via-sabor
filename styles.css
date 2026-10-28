@@ -52,16 +52,12 @@ p { margin: 0; }
 /* Topo */
 .topo {
   position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 10px var(--lateral); background: rgba(255, 248, 239, .96);
+  gap: 16px; padding: 10px var(--lateral); background: var(--creme);
   border-bottom: 1px solid var(--linha);
 }
-.marca { color: var(--chocolate); text-decoration: none; }
-.marca-oval {
-  display: inline-flex; flex-direction: column; align-items: center; line-height: 1;
-  font: 400 1.35rem/1 var(--titulo); padding: 8px 20px 9px; border: 2px solid var(--chocolate);
-  border-radius: 50%;
-}
-.marca-oval small { font: 600 .62rem/1 var(--texto); letter-spacing: .08em; margin-bottom: 3px; color: var(--chocolate-suave); }
+.marca { display: block; flex-shrink: 0; }
+.marca img { width: auto; height: 60px; }
+@media (max-width: 760px) { .marca img { height: 50px; } }
 .menu { display: flex; align-items: center; gap: 28px; }
 .menu a:not(.botao) { color: var(--chocolate); text-decoration: none; font-weight: 500; padding: 10px 0; }
 .menu a:not(.botao):hover { text-decoration: underline; }
@@ -220,7 +216,7 @@ h1 { font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: -.01em; }
 @media (max-width: 760px) { .sobre { grid-template-columns: 1fr; } }
 
 .rodape { border-top: 1px solid var(--linha); padding: 40px var(--lateral) 48px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; color: var(--chocolate-suave); }
-.rodape-nome { font: 1.4rem var(--titulo); color: var(--chocolate); }
+.rodape-logo { width: auto; height: 72px; align-self: center; }
 .rodape nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 20px; }
 .rodape nav a { color: var(--chocolate); padding: 8px 0; }
 @media (max-width: 600px) { .rodape nav { margin-left: 0; width: 100%; } }
