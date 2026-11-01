@@ -8,6 +8,34 @@ window.FOTOS = [
   "h": 1112
  },
  {
+  "id": "bolo-40-anos-chocolate",
+  "cat": "bolos",
+  "alt": "Bolo de 40 anos coberto de raspas de chocolate e morangos, com topo dourado",
+  "w": 900,
+  "h": 1125
+ },
+ {
+  "id": "bolo-dourado",
+  "cat": "bolos",
+  "alt": "Bolo com cobertura pintada de dourado sobre base dourada",
+  "w": 900,
+  "h": 900
+ },
+ {
+  "id": "bolo-calda-chocolate-frutas",
+  "cat": "bolos",
+  "alt": "Bolo recheado com calda de chocolate escorrendo, morangos e uvas no topo",
+  "w": 900,
+  "h": 978
+ },
+ {
+  "id": "bolo-raspas-chocolate-morangos",
+  "cat": "bolos",
+  "alt": "Bolo coberto de raspas de chocolate e morangos inteiros",
+  "w": 900,
+  "h": 1015
+ },
+ {
   "id": "bolo-chocolate-morangos",
   "cat": "bolos",
   "alt": "Bolo com raspas de chocolate e morangos inteiros",
@@ -106,6 +134,13 @@ window.FOTOS = [
   "h": 1600
  },
  {
+  "id": "bombons-nozes-azul",
+  "cat": "docinhos",
+  "alt": "Bombons de chocolate com nozes em forminhas azuis",
+  "w": 900,
+  "h": 900
+ },
+ {
   "id": "brigadeiros-caixas",
   "cat": "docinhos",
   "alt": "Duas caixas cheias de brigadeiros e docinhos bicolores",
@@ -139,6 +174,13 @@ window.FOTOS = [
   "alt": "Caixa de docinhos de chocolate, parte com coco ralado",
   "w": 720,
   "h": 1280
+ },
+ {
+  "id": "pave-morango",
+  "cat": "docinhos",
+  "alt": "Pavê de morango na travessa, com morangos e fios de chocolate",
+  "w": 900,
+  "h": 726
  },
  {
   "id": "bombons-nozes",

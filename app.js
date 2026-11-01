@@ -30,6 +30,8 @@
   }
   if (S.whatsapp) {
     $('[data-whatsapp-contato]').href = `https://wa.me/${S.whatsapp}`;
+    // '5535984021792' vira '(35) 98402-1792'
+    $$('[data-wa-numero]').forEach((a) => { a.textContent = S.whatsapp.replace(/^55(\d\d)(\d{4,5})(\d{4})$/, '($1) $2-$3'); });
     mostrar('whatsapp');
   }
   if (S.endereco) {
@@ -38,7 +40,14 @@
       encodeURIComponent(`${S.nome}, ${S.endereco}, ${S.cidade} - ${S.estado}`);
     mostrar('endereco');
   }
-  if (S.horarios) { $('[data-horarios]').textContent = S.horarios; mostrar('horarios'); }
+  if (S.horarios) {
+    // No cartão de contato, cada dia fica numa linha
+    $$('[data-horarios]').forEach((el) => {
+      el.textContent = el.closest('.canais') ? S.horarios.replace(' · ', '\n') : S.horarios;
+      el.hidden = false;
+    });
+    mostrar('horarios');
+  }
   if (S.pascoa.aberta) $('[data-pascoa]').textContent = 'A coleção desta Páscoa está aberta para consultas.';
 
   // Fotos
@@ -62,16 +71,23 @@
     galeria.dataset.lista = cat;
     $$('button', filtros).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
     const c = S.categorias.find((c) => c.id === cat);
-    filtroTexto.textContent = c ? c.texto : `${lista.length} fotos de bolos, docinhos e salgados.`;
+    filtroTexto.textContent = c ? c.texto : `${lista.length} fotos de bolos, doces e salgados.`;
   };
   filtros.innerHTML = [{ id: 'todos', nome: 'Todos' }, ...S.categorias]
     .map((c) => `<button type="button" data-cat="${c.id}" aria-pressed="false">${c.nome}</button>`).join('');
   filtros.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) filtrar(b.dataset.cat); });
   filtrar('todos');
 
+  // Quadros de categoria: filtram a galeria e descem até ela
+  $$('[data-filtro]').forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    filtrar(a.dataset.filtro);
+    $('#produtos').scrollIntoView();
+  }));
+
   $$('[data-cat]').forEach((ul) => {
     if (ul.tagName !== 'UL') return;
-    const sizes = ul.classList.contains('faixa') ? '(min-width: 760px) 280px, 64vw' : '(min-width: 760px) 40vw, 100vw';
+    const sizes = ul.classList.contains('faixa') ? '(min-width: 760px) 260px, 62vw' : '(min-width: 700px) 25vw, 50vw';
     ul.innerHTML = FOTOS.filter((f) => f.cat === ul.dataset.cat).map((f) => itemHtml(f, sizes)).join('');
   });
 
@@ -113,4 +129,13 @@
   $$('[data-whatsapp]').forEach((a) => {
     a.href = waLink(a.dataset.msg || 'Olá! Vi o site da Confeitaria Via Sabor e gostaria de fazer uma encomenda.');
   });
+
+  // Entradas suaves ao rolar (o CSS só esconde os blocos quando isto está ativo)
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((itens) => itens.forEach((it) => {
+      if (it.isIntersecting) { it.target.classList.add('visivel'); io.unobserve(it.target); }
+    }), { rootMargin: '0px 0px -8% 0px' });
+    $$('[data-revelar]').forEach((el) => io.observe(el));
+    document.documentElement.classList.add('revelar-ok');
+  }
 })();
