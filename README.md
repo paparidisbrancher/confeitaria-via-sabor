@@ -12,7 +12,7 @@ Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http
 
 | Dado | Situação |
 |---|---|
-| WhatsApp | A caixa traz `8402-1792` no formato antigo (sem o 9). Confirmar o número atual e se é WhatsApp. Com ele, preencher `whatsapp` no `config.js`. |
+| WhatsApp | `(35) 98402-1792` (número da caixa com o 9), confirmado pelo Erick em 01/11/2026. Todos os botões de encomenda abrem o WhatsApp. |
 | Endereço | A caixa diz **Rua Major João Gonçalves, 181**; uma listagem na internet diz **255**. Confirmar e preencher `endereco`. |
 | Horários | Não encontrados. Preencher `horarios`. |
 | Telefone fixo | `(35) 3523-2501` aparece na caixa e na listagem; já está no site. Confirmar se continua ativo. |

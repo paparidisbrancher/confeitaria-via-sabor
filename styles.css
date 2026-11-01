@@ -229,32 +229,19 @@ h1 small { font-size: .24em; letter-spacing: .02em; margin-left: .08em; }
 .filtros button[aria-pressed="true"] { background: var(--rosa); border-color: var(--rosa); color: #fff; }
 .filtro-texto { color: var(--tinta-suave); margin: 18px auto 32px; min-height: 1.6em; max-width: 60ch; text-align: center; }
 
-.galeria { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 12px; }
-@media (min-width: 700px) { .galeria { columns: 3; column-gap: 16px; } }
-@media (min-width: 1050px) { .galeria { columns: 4; } }
-.galeria li { break-inside: avoid; margin-bottom: 12px; }
-@media (min-width: 700px) { .galeria li { margin-bottom: 16px; } }
+/* Todas as fotos no mesmo formato, em grade */
+.galeria { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (min-width: 700px) { .galeria { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+@media (min-width: 1050px) { .galeria { grid-template-columns: repeat(4, 1fr); } }
 .foto-botao { display: block; width: 100%; padding: 0; border: 0; background: var(--linha); border-radius: 18px; overflow: hidden; cursor: zoom-in; }
 .foto-botao img { width: 100%; transition: transform .4s ease; }
 @media (hover: hover) { .foto-botao:hover img { transform: scale(1.04); } }
-.galeria .foto-botao img { aspect-ratio: 9 / 14; object-fit: cover; }
-.galeria li:nth-child(5n+2) .foto-botao img { aspect-ratio: 9 / 16; }
-.galeria li:nth-child(7n+4) .foto-botao img { aspect-ratio: 4 / 5; }
+.galeria img, .mosaico img { aspect-ratio: 4 / 5; object-fit: cover; }
 
-/* Celebrações: mosaico assimétrico */
+/* Celebrações */
 .celebracoes { padding-top: 0; }
-.mosaico { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: auto auto; }
-.mosaico li:first-child { grid-row: span 2; }
-.mosaico li:first-child img { aspect-ratio: 3 / 4; height: 100%; }
-.mosaico img { width: 100%; object-fit: cover; aspect-ratio: 4 / 5; }
-.mosaico li:nth-child(4) { grid-column: 2 / span 2; }
-.mosaico li:nth-child(4) img { aspect-ratio: 16 / 10; object-position: 50% 60%; }
-@media (max-width: 760px) {
-  .mosaico { grid-template-columns: 1fr 1fr; }
-  .mosaico li:first-child { grid-column: span 2; grid-row: auto; }
-  .mosaico li:nth-child(4) { grid-column: span 2; }
-  .mosaico li:first-child img { aspect-ratio: 4 / 5; }
-}
+.mosaico { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (min-width: 700px) { .mosaico { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
 
 /* Páscoa: cartão vinho */
 .pascoa { padding: 0 var(--lateral); }
@@ -273,7 +260,7 @@ h1 small { font-size: .24em; letter-spacing: .02em; margin-left: .08em; }
   overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-color: var(--rosa) transparent;
 }
 .faixa li { flex: 0 0 clamp(200px, 24vw, 260px); scroll-snap-align: start; }
-.faixa img { aspect-ratio: 9 / 15; object-fit: cover; width: 100%; }
+.faixa img { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
 .faixa .foto-botao { background: var(--vinho-claro); }
 .pascoa :focus-visible { outline-color: #fff; }
 @media (max-width: 760px) {
@@ -283,31 +270,13 @@ h1 small { font-size: .24em; letter-spacing: .02em; margin-left: .08em; }
 }
 
 /* Encomenda */
-.encomenda-grade { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
-@media (max-width: 860px) { .encomenda-grade { grid-template-columns: 1fr; } }
-.passos { list-style: none; counter-reset: passo; margin: 0; padding: 0; display: grid; gap: 28px; }
-.passos li { counter-increment: passo; display: grid; grid-template-columns: 60px 1fr; column-gap: 16px; color: var(--tinta-suave); }
-.passos li::before {
-  content: counter(passo); grid-row: span 2; width: 52px; height: 52px; border-radius: 50%;
-  background: var(--rosa-claro); display: grid; place-items: center; font: 1.6rem var(--display); color: var(--rosa-escuro);
+.encomenda-cartao {
+  display: grid; justify-items: center; gap: 20px; text-align: center;
+  background: var(--creme); border-radius: 28px; padding: clamp(36px, 6vw, 72px) clamp(20px, 5vw, 64px);
 }
-.passos strong { display: block; color: var(--tinta); font-weight: 700; font-size: 1.1rem; }
-
-.formulario { background: #fff; border: 1px solid var(--linha); border-radius: 24px; padding: clamp(20px, 4vw, 36px); display: grid; gap: 18px; box-shadow: 0 18px 50px rgba(77, 10, 31, .06); }
-.formulario label { display: grid; gap: 6px; font-weight: 600; font-size: .95rem; }
-.formulario input, .formulario select, .formulario textarea {
-  width: 100%; min-height: 48px; padding: 10px 14px; border: 1.5px solid #D9C8C2; border-radius: 12px;
-  background: #fff; color: var(--tinta); font: 400 1rem/1.4 var(--texto);
-}
-.formulario textarea { resize: vertical; background: var(--creme); }
-.formulario input:focus-visible, .formulario select:focus-visible, .formulario textarea:focus-visible { outline-offset: 0; border-color: var(--rosa); }
-.linha-dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 480px) { .linha-dupla { grid-template-columns: 1fr; } }
-.form-nota { font-size: .92rem; color: var(--tinta-suave); }
-.form-erro { color: #A3122F; font-weight: 600; }
-.formulario > .botao { justify-self: start; }
-.mensagem { display: grid; gap: 14px; border-top: 1px solid var(--linha); padding-top: 18px; }
-.copiado { font-weight: 600; min-height: 1.6em; }
+.encomenda-cartao > p { color: var(--tinta-suave); max-width: 52ch; }
+.botao-grande { min-height: 56px; padding: 14px 32px; font-size: 1.1rem; }
+.encomenda-dica { font: 700 1.25rem/1.2 var(--mao); color: var(--tinta) !important; }
 
 /* Contato */
 .contato { padding-top: 0; text-align: center; }

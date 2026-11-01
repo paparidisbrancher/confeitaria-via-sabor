@@ -4,6 +4,7 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const igUrl = `https://www.instagram.com/${S.instagram}/`;
+  const waLink = (msg) => S.whatsapp ? `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(msg)}` : igUrl;
 
   // Menu móvel
   const menuBotao = $('.menu-botao'), menu = $('#menu');
@@ -85,6 +86,7 @@
     dImg.width = f.w; dImg.height = f.h; dImg.alt = f.alt;
     dCap.textContent = f.alt;
     dCont.textContent = `${indice + 1} de ${listaAtual.length}`;
+    $('[data-referencia]', dlg).href = waLink(`Olá! Vi no site da Confeitaria Via Sabor esta foto: "${f.alt}". Gostaria de encomendar algo parecido.`);
   };
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-foto]');
@@ -104,56 +106,11 @@
     if (e.key === 'ArrowLeft') exibir(indice - 1);
     if (e.key === 'ArrowRight') exibir(indice + 1);
   });
-  dlg.addEventListener('close', () => { if (origem && !dlg.dataset.indo) origem.focus(); delete dlg.dataset.indo; });
+  dlg.addEventListener('close', () => { if (origem) origem.focus(); });
 
-  // Formulário que prepara a mensagem
-  const form = $('.formulario');
-  const categoriaDaFoto = { bolos: 'Bolo', docinhos: 'Docinhos e bombons', salgados: 'Salgados', pascoa: 'Ovo de colher', celebracoes: 'Outro' };
-  $('[data-referencia]', dlg).addEventListener('click', () => {
-    const f = listaAtual[indice];
-    form.categoria.value = categoriaDaFoto[f.cat];
-    form.referencia.value = f.alt;
-    dlg.dataset.indo = '1';
-    dlg.close();
-    $('#encomenda').scrollIntoView();
-    form.ocasiao.focus({ preventScroll: true });
-  });
-
-  const dataBR = (v) => v ? v.split('-').reverse().join('/') : '';
-  const caixa = $('.mensagem', form), erro = $('.form-erro', form), wa = $('[data-whatsapp]', form);
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!form.categoria.value) { erro.hidden = false; form.categoria.focus(); return; }
-    erro.hidden = true;
-    const linhas = [
-      'Olá! Vi o site da Confeitaria Via Sabor e gostaria de consultar uma encomenda.',
-      `Categoria: ${form.categoria.value}`,
-      form.ocasiao.value.trim() && `Ocasião: ${form.ocasiao.value.trim()}`,
-      form.data.value && `Data desejada: ${dataBR(form.data.value)}`,
-      form.quantidade.value.trim() && `Quantidade aproximada: ${form.quantidade.value.trim()}`,
-      form.referencia.value.trim() && `Referência: ${form.referencia.value.trim()}`,
-      'Quais são as opções, a disponibilidade e o valor?',
-    ].filter(Boolean);
-    const texto = linhas.join('\n');
-    form.mensagem.value = texto;
-    if (S.whatsapp) {
-      wa.href = `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(texto)}`;
-      wa.hidden = false;
-    }
-    caixa.hidden = false;
-    $('.copiado', form).textContent = '';
-    form.mensagem.focus();
-  });
-  form.categoria.addEventListener('change', () => { if (form.categoria.value) erro.hidden = true; });
-
-  $('[data-copiar]', form).addEventListener('click', async () => {
-    const aviso = $('.copiado', form);
-    try {
-      await navigator.clipboard.writeText(form.mensagem.value);
-      aviso.textContent = 'Mensagem copiada. Agora é só colar na conversa.';
-    } catch {
-      form.mensagem.select();
-      aviso.textContent = 'Não foi possível copiar sozinho. O texto está selecionado: copie manualmente.';
-    }
+  // Encomenda: todos os botões [data-whatsapp] abrem a conversa com uma mensagem pronta.
+  // Sem número configurado, caem no Instagram.
+  $$('[data-whatsapp]').forEach((a) => {
+    a.href = waLink(a.dataset.msg || 'Olá! Vi o site da Confeitaria Via Sabor e gostaria de fazer uma encomenda.');
   });
 })();
