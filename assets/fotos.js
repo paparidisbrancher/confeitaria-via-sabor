@@ -8,58 +8,9 @@ window.FOTOS = [
   "h": 1112
  },
  {
-  "id": "bolo-morangos-lacos",
+  "id": "bolo-chocolate-morangos",
   "cat": "bolos",
-  "alt": "Bolo branco com morangos no topo e laços de fita vermelha",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-raspas-brancas",
-  "cat": "bolos",
-  "alt": "Bolo coberto de raspas de chocolate branco e morangos",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-pincelado-rosa",
-  "cat": "bolos",
-  "alt": "Bolo branco com pinceladas rosa e detalhes dourados",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-pincelado-dourado",
-  "cat": "bolos",
-  "alt": "Bolo branco com pinceladas rosé, dourado e pérolas",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-flores",
-  "cat": "bolos",
-  "alt": "Bolo rosado decorado com flores vermelhas e folhas douradas",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-vinil",
-  "cat": "bolos",
-  "alt": "Bolo preto em formato de disco de vinil com flores rosa",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-vintage-morangos",
-  "cat": "bolos",
-  "alt": "Bolo branco estilo vintage com bordas de chantilly e morangos",
-  "w": 900,
-  "h": 1600
- },
- {
-  "id": "bolo-cha-revelacao",
-  "cat": "bolos",
-  "alt": "Bolo azul e rosa para chá revelação, com topo de balões e ursinhos",
+  "alt": "Bolo com raspas de chocolate e morangos inteiros",
   "w": 900,
   "h": 1600
  },
@@ -71,9 +22,23 @@ window.FOTOS = [
   "h": 1600
  },
  {
-  "id": "bolo-rosas-chantilly",
+  "id": "bolo-raspas-brancas",
   "cat": "bolos",
-  "alt": "Bolo branco com faixa de rosetas cor-de-rosa",
+  "alt": "Bolo coberto de raspas de chocolate branco e morangos",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-vintage-morangos",
+  "cat": "bolos",
+  "alt": "Bolo branco estilo vintage com bordas de chantilly e morangos",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-morangos-lacos",
+  "cat": "bolos",
+  "alt": "Bolo branco com morangos no topo e laços de fita vermelha",
   "w": 900,
   "h": 1600
  },
@@ -85,9 +50,44 @@ window.FOTOS = [
   "h": 1600
  },
  {
-  "id": "bolo-borboletas",
+  "id": "bolo-vinil",
   "cat": "bolos",
-  "alt": "Bolo rosa com glitter e borboletas, diante da caixa da confeitaria",
+  "alt": "Bolo preto em formato de disco de vinil com flores rosa",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-rosas-chantilly",
+  "cat": "bolos",
+  "alt": "Bolo branco com faixa de rosetas cor-de-rosa",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-cha-revelacao",
+  "cat": "bolos",
+  "alt": "Bolo azul e rosa para chá revelação, com topo de balões e ursinhos",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-flores",
+  "cat": "bolos",
+  "alt": "Bolo rosado decorado com flores vermelhas e folhas douradas",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-pincelado-dourado",
+  "cat": "bolos",
+  "alt": "Bolo branco com pinceladas rosé, dourado e pérolas",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "bolo-pincelado-rosa",
+  "cat": "bolos",
+  "alt": "Bolo branco com pinceladas rosa e detalhes dourados",
   "w": 900,
   "h": 1600
  },
@@ -99,25 +99,11 @@ window.FOTOS = [
   "h": 1600
  },
  {
-  "id": "bolo-chocolate-morangos",
+  "id": "bolo-borboletas",
   "cat": "bolos",
-  "alt": "Bolo com raspas de chocolate e morangos inteiros",
+  "alt": "Bolo rosa com glitter e borboletas, diante da caixa da confeitaria",
   "w": 900,
   "h": 1600
- },
- {
-  "id": "bombons-nozes",
-  "cat": "docinhos",
-  "alt": "Caixa de docinhos de chocolate com nozes, em forminhas roxas",
-  "w": 720,
-  "h": 1280
- },
- {
-  "id": "bombons-coco",
-  "cat": "docinhos",
-  "alt": "Caixa de docinhos de chocolate, parte com coco ralado",
-  "w": 720,
-  "h": 1280
  },
  {
   "id": "brigadeiros-caixas",
@@ -127,13 +113,6 @@ window.FOTOS = [
   "h": 1280
  },
  {
-  "id": "bombom-morango",
-  "cat": "docinhos",
-  "alt": "Bombom de chocolate cortado ao meio mostrando um morango inteiro",
-  "w": 900,
-  "h": 1600
- },
- {
   "id": "docinhos-forminha-cobre",
   "cat": "docinhos",
   "alt": "Docinhos em forminhas de pétalas cor de cobre",
@@ -141,9 +120,9 @@ window.FOTOS = [
   "h": 1600
  },
  {
-  "id": "docinhos-lilas",
+  "id": "bombom-morango",
   "cat": "docinhos",
-  "alt": "Docinhos em forminhas lilás com brilho",
+  "alt": "Bombom de chocolate cortado ao meio mostrando um morango inteiro",
   "w": 900,
   "h": 1600
  },
@@ -155,9 +134,23 @@ window.FOTOS = [
   "h": 1600
  },
  {
-  "id": "docinhos-rosa",
+  "id": "bombons-coco",
   "cat": "docinhos",
-  "alt": "Docinhos em forminhas pink, com cobertura branca e escura",
+  "alt": "Caixa de docinhos de chocolate, parte com coco ralado",
+  "w": 720,
+  "h": 1280
+ },
+ {
+  "id": "bombons-nozes",
+  "cat": "docinhos",
+  "alt": "Caixa de docinhos de chocolate com nozes, em forminhas roxas",
+  "w": 720,
+  "h": 1280
+ },
+ {
+  "id": "docinhos-lilas",
+  "cat": "docinhos",
+  "alt": "Docinhos em forminhas lilás com brilho",
   "w": 900,
   "h": 1600
  },
@@ -165,6 +158,13 @@ window.FOTOS = [
   "id": "brigadeiros-lilas",
   "cat": "docinhos",
   "alt": "Caixa de brigadeiros e docinhos claros em forminhas roxas",
+  "w": 900,
+  "h": 1600
+ },
+ {
+  "id": "docinhos-rosa",
+  "cat": "docinhos",
+  "alt": "Docinhos em forminhas pink, com cobertura branca e escura",
   "w": 900,
   "h": 1600
  },
@@ -204,13 +204,6 @@ window.FOTOS = [
   "h": 1600
  },
  {
-  "id": "mesa-aniversario-27",
-  "cat": "celebracoes",
-  "alt": "Mesa de aniversário com bolo branco e rosa e docinhos em forminhas pink",
-  "w": 900,
-  "h": 1200
- },
- {
   "id": "mesa-80-anos",
   "cat": "celebracoes",
   "alt": "Mesa de 80 anos com bolo e bandejas de docinhos",
@@ -218,16 +211,23 @@ window.FOTOS = [
   "h": 1280
  },
  {
-  "id": "mesa-aniversario-rosa",
+  "id": "mesa-79-anos",
   "cat": "celebracoes",
-  "alt": "Mesa com bolo rosa e docinhos roxos e pink",
+  "alt": "Mesa de 79 anos com bolo branco e docinhos em forminhas vermelhas",
   "w": 900,
   "h": 1600
  },
  {
-  "id": "mesa-79-anos",
+  "id": "mesa-aniversario-27",
   "cat": "celebracoes",
-  "alt": "Mesa de 79 anos com bolo branco e docinhos em forminhas vermelhas",
+  "alt": "Mesa de aniversário com bolo branco e rosa e docinhos em forminhas pink",
+  "w": 900,
+  "h": 1200
+ },
+ {
+  "id": "mesa-aniversario-rosa",
+  "cat": "celebracoes",
+  "alt": "Mesa com bolo rosa e docinhos roxos e pink",
   "w": 900,
   "h": 1600
  },
