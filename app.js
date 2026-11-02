@@ -60,7 +60,9 @@
   let listaAtual = [];
   const galeria = $('.galeria'), filtros = $('.filtros'), filtroTexto = $('.filtro-texto');
   // "Todos" intercala as categorias: bolo, docinho, salgado, bolo...
-  const porCat = S.categorias.map((c) => FOTOS.filter((f) => f.cat === c.id));
+  const usadas = new Set($$('main img').map((i) => (i.getAttribute('src').match(/img\/(.+)-\d+\.webp$/) || [])[1]));
+  const livres = FOTOS.filter((f) => !usadas.has(f.id));
+  const porCat = S.categorias.map((c) => livres.filter((f) => f.cat === c.id));
   const produtos = [];
   for (let i = 0; porCat.some((l) => i < l.length); i++) porCat.forEach((l) => l[i] && produtos.push(l[i]));
   const sizesGaleria = '(min-width: 1050px) 25vw, (min-width: 700px) 33vw, 50vw';
@@ -88,7 +90,7 @@
   $$('[data-cat]').forEach((ul) => {
     if (ul.tagName !== 'UL') return;
     const sizes = ul.classList.contains('faixa') ? '(min-width: 760px) 260px, 62vw' : '(min-width: 700px) 25vw, 50vw';
-    ul.innerHTML = FOTOS.filter((f) => f.cat === ul.dataset.cat).map((f) => itemHtml(f, sizes)).join('');
+    ul.innerHTML = livres.filter((f) => f.cat === ul.dataset.cat).map((f) => itemHtml(f, sizes)).join('');
   });
 
   // Foto ampliada
@@ -102,7 +104,7 @@
     dImg.width = f.w; dImg.height = f.h; dImg.alt = f.alt;
     dCap.textContent = f.alt;
     dCont.textContent = `${indice + 1} de ${listaAtual.length}`;
-    $('[data-referencia]', dlg).href = waLink(`Olá! Vi no site da Confeitaria Via Sabor esta foto: "${f.alt}". Gostaria de encomendar algo parecido.`);
+    $('[data-referencia]', dlg).href = waLink(`Olá, vi no site da Confeitaria Via Sabor esta foto: "${f.alt}". Gostaria de encomendar algo parecido.`);
   };
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-foto]');
@@ -127,7 +129,7 @@
   // Encomenda: todos os botões [data-whatsapp] abrem a conversa com uma mensagem pronta.
   // Sem número configurado, caem no Instagram.
   $$('[data-whatsapp]').forEach((a) => {
-    a.href = waLink(a.dataset.msg || 'Olá! Vi o site da Confeitaria Via Sabor e gostaria de fazer uma encomenda.');
+    a.href = waLink(a.dataset.msg || 'Olá, vi o site da Confeitaria Via Sabor e gostaria de fazer uma encomenda.');
   });
 
   // Entradas suaves ao rolar (o CSS só esconde os blocos quando isto está ativo)
