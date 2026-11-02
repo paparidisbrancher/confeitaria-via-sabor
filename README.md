@@ -3,7 +3,7 @@
 Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http.server` nesta pasta.
 
 - Dados de contato, horário, categorias e Páscoa: `config.js`.
-- Fotos: `assets/img/` (WebP 480 e 900 px; a foto do topo também em 1440) e a lista em `assets/fotos.js`.
+- Fotos: `assets/img/` (WebP 480 e 900 px; a foto do topo, o bolo de 40 anos, também em 1440) e a lista em `assets/fotos.js`.
   As fotos em formato de story vieram dos destaques do Instagram; as seis com nomes como
   `bolo-40-anos-chocolate`, `bolo-dourado`, `bolo-calda-chocolate-frutas`, `bolo-raspas-chocolate-morangos`,
   `bombons-nozes-azul` e `pave-morango` vieram das publicações de agosto de 2024 (baixadas em 01/11/2026).

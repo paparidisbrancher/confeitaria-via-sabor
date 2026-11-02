@@ -143,7 +143,7 @@ h1 em, h2 em { font-style: italic; color: var(--dourado-texto); }
 h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .apoio { color: var(--creme-texto); font-size: clamp(1.05rem, 1.4vw, 1.18rem); max-width: 40ch; margin: 28px 0 36px; }
 .abertura-foto { position: relative; margin: 0; min-height: 420px; }
-.abertura-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.abertura-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 
 .selo { position: absolute; left: -58px; bottom: 56px; width: 116px; z-index: 2; }
 .selo circle { fill: var(--chocolate); }
