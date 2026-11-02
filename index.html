@@ -20,7 +20,7 @@
 <link rel="icon" href="assets/icone.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/bolo-40-anos-chocolate-900.webp" as="image" imagesrcset="assets/img/bolo-40-anos-chocolate-480.webp 480w, assets/img/bolo-40-anos-chocolate-900.webp 900w, assets/img/bolo-40-anos-chocolate-1440.webp 1440w" imagesizes="(min-width: 900px) 55vw, 100vw">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,17 +60,17 @@
     <a href="#produtos">Fotos</a>
     <a href="#pascoa">Páscoa</a>
     <a href="#celebracoes">Festas</a>
+    <a href="#como-encomendar">Como encomendar</a>
     <a href="#contato">Contato</a>
-    <a class="botao botao-pequeno" data-whatsapp href="#contato" target="_blank" rel="noopener">Encomendar</a>
   </nav>
+  <a class="botao botao-pequeno topo-encomendar" data-whatsapp href="#contato" target="_blank" rel="noopener">Encomendar</a>
 </header>
 
 <main id="conteudo">
   <section id="inicio" class="abertura">
     <div class="abertura-texto">
-      <p class="rotulo">Confeitaria · Alpinópolis, MG</p>
       <h1>Bolos, doces e salgados para <em>cada festa</em>.</h1>
-      <p class="apoio">Conheça as criações da Confeitaria Via Sabor e encontre inspiração para a sua próxima comemoração.</p>
+      <p class="apoio">Bolos decorados, docinhos, bombons e salgados sob encomenda, feitos pela Confeitaria Via Sabor em Alpinópolis (MG). Escolha pelas fotos e combine o pedido no WhatsApp.</p>
       <div class="acoes">
         <a class="botao" data-whatsapp href="#contato" target="_blank" rel="noopener">Encomendar no WhatsApp</a>
         <a class="link-seta" href="#produtos">Ver as fotos <span aria-hidden="true">→</span></a>
@@ -99,7 +99,6 @@
   <section class="secao categorias" aria-labelledby="categorias-titulo">
     <div class="secao-cabeca" data-revelar>
       <div>
-        <p class="rotulo">O que sai da cozinha</p>
         <h2 id="categorias-titulo">Escolha por onde <em>começar</em></h2>
       </div>
       <p>Toque numa categoria para ver as fotos dela.</p>
@@ -128,7 +127,6 @@
            alt="Minipizzas em bandejas na frente da caixa da Confeitaria Via Sabor">
     </div>
     <div class="historia-texto" data-revelar>
-      <p class="rotulo">A confeitaria</p>
       <h2 id="sobre-titulo">Tortas, bolos, salgados e bombons. <em>Está escrito na caixa.</em></h2>
       <p>A Via Sabor é uma confeitaria de Alpinópolis, em Minas Gerais. Todas as fotos deste site mostram produtos feitos por ela.</p>
       <ul class="cardapio">
@@ -145,23 +143,22 @@
   <section id="produtos" class="secao produtos" aria-labelledby="produtos-titulo">
     <div class="secao-cabeca" data-revelar>
       <div>
-        <p class="rotulo">Galeria</p>
         <h2 id="produtos-titulo">Feito na <em>Via Sabor</em></h2>
       </div>
       <p>Bolos decorados, doces, bombons e salgados. Escolha uma categoria e toque numa foto para ampliar.</p>
     </div>
     <div class="filtros" role="group" aria-label="Filtrar fotos por categoria"></div>
     <p class="filtro-texto" aria-live="polite"></p>
-    <ul class="galeria" aria-label="Fotos de produtos"></ul>
+    <ul class="galeria" id="galeria" aria-label="Fotos de produtos"></ul>
+    <button class="botao botao-contorno-escuro galeria-mais" type="button" aria-controls="galeria" hidden></button>
     <noscript><p>Veja mais fotos no <a href="https://www.instagram.com/confeitariaviasaboralp/">Instagram @confeitariaviasaboralp</a>.</p></noscript>
   </section>
 
   <section id="pascoa" class="pascoa" aria-labelledby="pascoa-titulo">
     <div class="pascoa-cartao">
       <div class="pascoa-texto" data-revelar>
-        <p class="rotulo">Coleção sazonal</p>
         <h2 id="pascoa-titulo">Ovos de <em>Páscoa</em></h2>
-        <p>Estes são alguns ovos que a confeitaria já preparou em Páscoas anteriores.</p>
+        <p>Coleção da época de Páscoa. Estes são alguns ovos que a confeitaria já preparou em anos anteriores.</p>
         <p class="pascoa-aviso" data-pascoa></p>
         <a class="botao" data-whatsapp href="#contato" target="_blank" rel="noopener" data-msg="Olá, vi o site da Confeitaria Via Sabor e gostaria de saber sobre os ovos de Páscoa.">Consultar disponibilidade</a>
       </div>
@@ -172,7 +169,6 @@
   <section id="celebracoes" class="secao celebracoes" aria-labelledby="celebracoes-titulo">
     <div class="secao-cabeca" data-revelar>
       <div>
-        <p class="rotulo">Festas</p>
         <h2 id="celebracoes-titulo">Uma mesa cheia de motivos para <em>celebrar</em></h2>
       </div>
       <p>Bolos e docinhos da confeitaria em festas de clientes, de aniversários de 26 a 80 anos.</p>
@@ -183,7 +179,6 @@
   <section id="videos" class="secao videos" aria-labelledby="videos-titulo">
     <div class="secao-cabeca">
       <div>
-        <p class="rotulo">Na cozinha</p>
         <h2 id="videos-titulo">Feito aqui, <em>do jeito que chega</em></h2>
       </div>
     </div>
@@ -203,27 +198,29 @@
     </ul>
   </section>
 
-  <section id="encomenda" class="encomenda" aria-labelledby="encomenda-titulo">
+  <section id="como-encomendar" class="encomenda" aria-labelledby="encomenda-titulo">
     <div data-revelar>
-      <p class="rotulo">Encomendas</p>
-      <h2 id="encomenda-titulo">Faça sua encomenda pelo <em>WhatsApp</em></h2>
-      <p>Conte o que você quer e para quando. Se tiver uma foto de referência, mande junto. Valores e disponibilidade são combinados na conversa.</p>
-      <a class="botao botao-grande" data-whatsapp href="#contato" target="_blank" rel="noopener">Conversar no WhatsApp</a>
-      <p class="encomenda-dica">Gostou de alguma foto da galeria? Toque nela e use “Pedir algo parecido”.</p>
+      <h2 id="encomenda-titulo">Como encomendar pelo <em>WhatsApp</em></h2>
+      <ol class="passos">
+        <li><strong>Escolha o que quer</strong><span>Veja as fotos de bolos, doces e salgados. Gostou de uma? Toque nela e use “Pedir algo parecido”.</span></li>
+        <li><strong>Diga a data e a quantidade</strong><span>Para quando é a festa e para quantas pessoas, ou quantas unidades de cada item.</span></li>
+        <li><strong>Combine os detalhes</strong><span>Sabores, valores e disponibilidade são confirmados na conversa com a confeitaria.</span></li>
+      </ol>
+      <a class="botao botao-grande" data-whatsapp data-msg="Olá, vi o site da Confeitaria Via Sabor e gostaria de fazer uma encomenda.&#10;Produto:&#10;Data:&#10;Quantidade (pessoas ou unidades):" href="#contato" target="_blank" rel="noopener">Começar a encomenda</a>
+      <p class="encomenda-dica">A mensagem já abre com os campos produto, data e quantidade para você preencher.</p>
     </div>
   </section>
 
   <section id="contato" class="secao contato" aria-labelledby="contato-titulo">
     <div class="secao-cabeca">
       <div>
-        <p class="rotulo">Fale com a gente</p>
-        <h2 id="contato-titulo">Contato</h2>
+          <h2 id="contato-titulo">Contato</h2>
       </div>
     </div>
     <ul class="canais">
       <li data-campo="whatsapp" hidden>
         <span class="canal-rotulo">WhatsApp (encomendas)</span>
-        <a data-whatsapp-contato target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+        <a data-whatsapp-contato data-wa-numero target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
       </li>
       <li data-campo="telefone" hidden>
         <span class="canal-rotulo">Telefone</span>
@@ -248,11 +245,11 @@
 
 <footer class="rodape">
   <img class="rodape-logo" src="assets/logo-dourado-320.webp" width="320" height="150" alt="Confeitaria Via Sabor" loading="lazy">
-  <p>Alpinópolis, MG</p>
+  <p>Alpinópolis, MG<br>Encomendas: <a data-whatsapp data-wa-numero href="#contato" target="_blank" rel="noopener">(35) 98402-1792</a></p>
   <nav aria-label="Rodapé">
     <a href="#produtos">Fotos</a>
     <a href="#celebracoes">Festas</a>
-    <a href="#contato">Contato</a>
+    <a href="#como-encomendar">Como encomendar</a>
     <a data-instagram href="https://www.instagram.com/confeitariaviasaboralp/" target="_blank" rel="noopener">Instagram</a>
   </nav>
 </footer>
@@ -272,9 +269,8 @@
   </div>
 </dialog>
 
-<script src="config.js?v=8"></script>
-<script src="assets/fotos.js?v=8"></script>
-<script src="app.js?v=8"></script>
-<script>document.addEventListener('play',e=>document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()}),true)</script>
+<script src="config.js?v=9"></script>
+<script src="assets/fotos.js?v=9"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>

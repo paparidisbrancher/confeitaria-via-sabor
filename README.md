@@ -23,6 +23,9 @@ Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http
 | Telefone fixo | `(35) 3523-2501` aparece na caixa, na listagem e na bio do Instagram; já está no site. |
 | "Rosilane" | Nome impresso no logo da caixa. Confirmar se deve aparecer no site. |
 | Logo | Extraído da foto da caixa (`assets/logo-800.png`) e recolorido. O perfil do Instagram usa outro logo (“Via Sabor” cursivo com um batedor, fundo grafite), mas só em 150 px. Pedir os arquivos originais em alta para a versão final e decidir qual logo usar. |
+| Prazo de encomenda | Não informado em lugar nenhum. Perguntar com quantos dias de antecedência pedir bolos, doces e salgados; se houver um prazo, pôr no passo 2 de “Como encomendar”. |
+| Retirada ou entrega | Não informado. O site diz só que “sabores, valores e disponibilidade são confirmados na conversa”. Perguntar se entrega e em quais cidades além de Alpinópolis. |
+| Telefone fixo funcionando | `(35) 3523-2501` vem da caixa; confirmar que ainda atende. |
 | Páscoa | Mostrada como coleção sazonal. Ao abrir uma campanha, mudar `pascoa.aberta` para `true`. |
 | Uso das fotos | Algumas mostram nomes de aniversariantes em topos de bolo. Confirmar autorização. |
 | Mais fotos | Sem login, o Instagram mostra só as 12 publicações mais recentes (o perfil tem 79). Com acesso logado dá para buscar mais. |

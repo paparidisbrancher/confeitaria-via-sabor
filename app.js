@@ -57,8 +57,9 @@
   const itemHtml = (f, sizes) =>
     `<li><button class="foto-botao" type="button" data-foto="${f.id}" aria-label="Ampliar: ${f.alt}">${imgHtml(f, sizes)}</button></li>`;
 
-  let listaAtual = [];
-  const galeria = $('.galeria'), filtros = $('.filtros'), filtroTexto = $('.filtro-texto');
+  let listaAtual = [], tudo = false;
+  const INICIAIS = 12;
+  const galeria = $('.galeria'), filtros = $('.filtros'), filtroTexto = $('.filtro-texto'), mais = $('.galeria-mais');
   // "Todos" intercala as categorias: bolo, docinho, salgado, bolo...
   const usadas = new Set($$('main img').map((i) => (i.getAttribute('src').match(/img\/(.+)-\d+\.webp$/) || [])[1]));
   const livres = FOTOS.filter((f) => !usadas.has(f.id));
@@ -69,7 +70,10 @@
 
   const filtrar = (cat) => {
     const lista = cat === 'todos' ? produtos : produtos.filter((f) => f.cat === cat);
-    galeria.innerHTML = lista.map((f) => itemHtml(f, sizesGaleria)).join('');
+    const parcial = cat === 'todos' && !tudo && lista.length > INICIAIS + 2;
+    galeria.innerHTML = (parcial ? lista.slice(0, INICIAIS) : lista).map((f) => itemHtml(f, sizesGaleria)).join('');
+    mais.hidden = !parcial;
+    mais.textContent = `Ver todas as ${lista.length} fotos`;
     galeria.dataset.lista = cat;
     $$('button', filtros).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
     const c = S.categorias.find((c) => c.id === cat);
@@ -78,6 +82,11 @@
   filtros.innerHTML = [{ id: 'todos', nome: 'Todos' }, ...S.categorias]
     .map((c) => `<button type="button" data-cat="${c.id}" aria-pressed="false">${c.nome}</button>`).join('');
   filtros.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) filtrar(b.dataset.cat); });
+  mais.addEventListener('click', () => {
+    tudo = true; filtrar('todos');
+    // o foco vai para a primeira foto nova, para quem navega pelo teclado
+    const nova = $$('.foto-botao', galeria)[INICIAIS]; if (nova) nova.focus({ preventScroll: true });
+  });
   filtrar('todos');
 
   // Quadros de categoria: filtram a galeria e descem até ela
@@ -131,6 +140,8 @@
   $$('[data-whatsapp]').forEach((a) => {
     a.href = waLink(a.dataset.msg || 'Olá, vi o site da Confeitaria Via Sabor e gostaria de fazer uma encomenda.');
   });
+
+  document.addEventListener('play', (e) => $$('video').forEach((v) => { if (v !== e.target) v.pause(); }), true);
 
   // Entradas suaves ao rolar (o CSS só esconde os blocos quando isto está ativo)
   if ('IntersectionObserver' in window) {
