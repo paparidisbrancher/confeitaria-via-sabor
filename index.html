@@ -180,6 +180,29 @@
     <ul class="mosaico" data-cat="celebracoes"></ul>
   </section>
 
+  <section id="videos" class="secao videos" aria-labelledby="videos-titulo">
+    <div class="secao-cabeca">
+      <div>
+        <p class="rotulo">Na cozinha</p>
+        <h2 id="videos-titulo">Feito aqui, <em>do jeito que chega</em></h2>
+      </div>
+    </div>
+    <ul class="videos-lista">
+      <li><figure>
+        <video controls preload="none" playsinline muted loop poster="videos/C-a3qfChN_P.webp" width="720" height="1280" aria-label="Salgados saindo na caixa da Via Sabor"><source src="videos/C-a3qfChN_P.mp4" type="video/mp4"></video>
+        <figcaption>Salgados saindo na caixa da Via Sabor</figcaption>
+      </figure></li>
+      <li><figure>
+        <video controls preload="none" playsinline muted loop poster="videos/C-a3mQBhx_i.webp" width="720" height="1280" aria-label="Docinhos em forminhas"><source src="videos/C-a3mQBhx_i.mp4" type="video/mp4"></video>
+        <figcaption>Docinhos em forminhas</figcaption>
+      </figure></li>
+      <li><figure>
+        <video controls preload="none" playsinline muted loop poster="videos/C-a2mpNvbC1.webp" width="720" height="1280" aria-label="Bolo de rosas em chantilly"><source src="videos/C-a2mpNvbC1.mp4" type="video/mp4"></video>
+        <figcaption>Bolo de rosas em chantilly</figcaption>
+      </figure></li>
+    </ul>
+  </section>
+
   <section id="encomenda" class="encomenda" aria-labelledby="encomenda-titulo">
     <div data-revelar>
       <p class="rotulo">Encomendas</p>
@@ -252,5 +275,6 @@
 <script src="config.js?v=8"></script>
 <script src="assets/fotos.js?v=8"></script>
 <script src="app.js?v=8"></script>
+<script>document.addEventListener('play',e=>document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()}),true)</script>
 </body>
 </html>

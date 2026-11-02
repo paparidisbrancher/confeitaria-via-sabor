@@ -324,3 +324,10 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Vídeos curtos da cozinha (só baixam ao dar play) */
+.videos-lista{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:900px}
+.videos-lista figure{margin:0}
+.videos-lista video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:4px;background:#2b1d16}
+.videos-lista figcaption{margin-top:10px;font-size:.95rem}
+@media (max-width:699px){.videos-lista{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:62vw;overflow-x:auto;scroll-snap-type:x mandatory}.videos-lista li{scroll-snap-align:start}}
