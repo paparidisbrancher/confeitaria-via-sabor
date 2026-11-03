@@ -22,13 +22,6 @@ window.FOTOS = [
   "h": 900
  },
  {
-  "id": "bolo-calda-chocolate-frutas",
-  "cat": "bolos",
-  "alt": "Bolo recheado com calda de chocolate escorrendo, morangos e uvas no topo",
-  "w": 900,
-  "h": 978
- },
- {
   "id": "bolo-raspas-chocolate-morangos",
   "cat": "bolos",
   "alt": "Bolo coberto de raspas de chocolate e morangos inteiros",
