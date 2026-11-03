@@ -43,7 +43,7 @@
   if (S.horarios) {
     // No cartão de contato, cada dia fica numa linha
     $$('[data-horarios]').forEach((el) => {
-      el.textContent = el.closest('.canais') ? S.horarios.replace(' · ', '\n') : S.horarios;
+      el.textContent = el.closest('.canais') ? S.horarios.replaceAll(' · ', '\n') : S.horarios;
       el.hidden = false;
     });
     mostrar('horarios');
