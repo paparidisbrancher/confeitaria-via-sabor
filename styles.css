@@ -353,3 +353,14 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .videos-lista video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:var(--raio);background:var(--chocolate-2)}
 .videos-lista figcaption{margin-top:10px;font-size:.95rem;color:var(--tinta-suave)}
 @media (max-width:699px){.videos-lista{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:62vw;overflow-x:auto;scroll-snap-type:x mandatory}.videos-lista li{scroll-snap-align:start}}
+
+/* Cardápio completo (sem preços) */
+.sabores { padding-top: 0; }
+.sabores-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 32px); align-items: start; }
+.sabores-grupo { background: var(--creme); border-radius: var(--raio); padding: clamp(24px, 3vw, 36px); display: grid; justify-items: start; }
+.sabores-grupo h3 { font: 400 clamp(2rem, 3vw, 2.5rem)/1 var(--serifa); margin: 0 0 4px; }
+.sabores-grupo h4 { font: 600 .95rem/1.3 var(--texto); color: var(--dourado-texto); margin: 22px 0 8px; }
+.sabores-grupo ul { list-style: none; margin: 0; padding: 0; width: 100%; }
+.sabores-grupo li { padding: 7px 0; border-bottom: 1px dotted #BFA88A; }
+.sabores-grupo .botao { margin-top: 28px; }
+@media (max-width: 900px) { .sabores-grade { grid-template-columns: 1fr; } }
