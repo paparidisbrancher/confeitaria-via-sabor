@@ -113,7 +113,8 @@
     dImg.width = f.w; dImg.height = f.h; dImg.alt = f.alt;
     dCap.textContent = f.alt;
     dCont.textContent = `${indice + 1} de ${listaAtual.length}`;
-    $('[data-referencia]', dlg).href = waLink(`Olá, vi no site da Confeitaria Via Sabor esta foto: "${f.alt}". Gostaria de encomendar algo parecido.`);
+    // o link leva a equipe direto à foto (ver "?foto=" mais abaixo)
+    $('[data-referencia]', dlg).href = waLink(`Olá, vi no site da Confeitaria Via Sabor esta foto: "${f.alt}".\n${location.origin + location.pathname}?foto=${f.id}\nGostaria de encomendar algo parecido.\nData:\nQuantidade (pessoas ou unidades):`);
   };
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-foto]');
@@ -134,6 +135,14 @@
     if (e.key === 'ArrowRight') exibir(indice + 1);
   });
   dlg.addEventListener('close', () => { if (origem) origem.focus(); });
+
+  // Link direto para uma foto (?foto=id), enviado na mensagem do WhatsApp
+  const fotoLink = new URLSearchParams(location.search).get('foto');
+  if (fotoLink && FOTOS.some((f) => f.id === fotoLink)) {
+    tudo = true; filtrar('todos');
+    const b = $$('[data-foto]').find((x) => x.dataset.foto === fotoLink);
+    if (b) b.click();
+  }
 
   // Encomenda: todos os botões [data-whatsapp] abrem a conversa com uma mensagem pronta.
   // Sem número configurado, caem no Instagram.

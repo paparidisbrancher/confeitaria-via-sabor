@@ -184,7 +184,7 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 }
 
 /* Categorias em quadros */
-.cat-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.cat-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .cat { position: relative; display: block; overflow: hidden; border-radius: var(--raio); color: var(--papel); text-decoration: none; isolation: isolate; }
 .cat img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .cat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 26, 18, 0) 42%, rgba(43, 26, 18, .88) 100%); }
@@ -198,6 +198,8 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .cat:focus-visible { outline-offset: 4px; }
 @media (max-width: 760px) {
   .cat-lista { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cat-lista li:nth-child(3) { grid-column: 1 / -1; }
+  .cat-lista li:nth-child(3) img { aspect-ratio: 8 / 5; }
   .cat-nome { left: 14px; bottom: 38px; font-size: 1.35rem; }
   .cat-mais { left: 14px; bottom: 14px; }
 }
@@ -247,7 +249,7 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 @media (hover: hover) { .foto-botao:hover { box-shadow: 0 0 0 2px var(--dourado); } }
 
 /* Páscoa: cartão chocolate */
-.pascoa { padding: 0 var(--lateral); }
+.pascoa { padding: clamp(80px, 10vw, 136px) var(--lateral) 0; }
 .pascoa-cartao {
   max-width: var(--largura); margin: 0 auto; overflow: hidden;
   display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: clamp(28px, 4vw, 56px); align-items: center;
@@ -363,4 +365,7 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .sabores-grupo ul { list-style: none; margin: 0; padding: 0; width: 100%; }
 .sabores-grupo li { padding: 7px 0; border-bottom: 1px dotted #BFA88A; }
 .sabores-grupo .botao { margin-top: 28px; }
+.sabores-nota { margin: 14px 0 0; color: var(--tinta-suave); font-size: .95rem; }
+.sabores-tortas { grid-column: 1 / -1; }
+.sabores-tortas p { margin: 12px 0 0; color: var(--tinta-suave); max-width: 60ch; }
 @media (max-width: 900px) { .sabores-grade { grid-template-columns: 1fr; } }
