@@ -14,7 +14,7 @@ window.SITE = {
   // com null, caem no Instagram.
   whatsapp: '5535984021792',
 
-  // Endereço e horário do perfil da confeitaria no Google (03/11/2026). A caixa diz nº 181.
+  // Endereço e horário confirmados pelo Erick em 14/11/2026 (a caixa antiga diz nº 181; vale o 255).
   endereco: 'Rua Major João Gonçalves, 255, Centro',
   horarios: 'Seg a sex, 8h às 18h30 · Sáb, 8h às 17h30 · Dom, fechado',
 

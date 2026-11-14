@@ -18,12 +18,12 @@ Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http
 | Dado | Situação |
 |---|---|
 | WhatsApp | `(35) 98402-1792`, confirmado pelo Erick em 01/11/2026 e pela bio do Instagram ("Wpp *Apenas encomendas"). Todos os botões de encomenda abrem o WhatsApp. |
-| Horário | Do perfil do Google em 03/11/2026: seg a sex, 8h às 18h30; sáb, 8h às 17h30; dom fechado. A bio do Instagram diz 8h30 às 18h / 8h30 às 17h; confirmar qual vale. |
-| Endereço | No site: **Rua Major João Gonçalves, 255, Centro, CEP 37940-000**, do perfil da confeitaria no Google (03/11/2026). A caixa diz 181; confirmar. |
+| Horário | Do perfil do Google em 03/11/2026: seg a sex, 8h às 18h30; sáb, 8h às 17h30; dom fechado. Confirmado pelo Erick em 14/11/2026 (a bio do Instagram, com 8h30 às 18h, está desatualizada). |
+| Endereço | No site: **Rua Major João Gonçalves, 255, Centro, CEP 37940-000**, do perfil da confeitaria no Google (03/11/2026). Nº 255 confirmado pelo Erick em 14/11/2026 (a caixa diz 181). |
 | Telefone fixo | `(35) 3523-2501` aparece na caixa, na listagem e na bio do Instagram; já está no site. |
 | "Rosilane" | Nome impresso no logo da caixa. Confirmar se deve aparecer no site. |
 | Logo | Extraído da foto da caixa (`assets/logo-800.png`) e recolorido. O perfil do Instagram usa outro logo (“Via Sabor” cursivo com um batedor, fundo grafite), mas só em 150 px. Pedir os arquivos originais em alta para a versão final e decidir qual logo usar. |
-| Prazo de encomenda | Não informado em lugar nenhum. Perguntar com quantos dias de antecedência pedir bolos, doces e salgados; se houver um prazo, pôr no passo 2 de “Como encomendar”. |
+| Prazo de encomenda | Não informado em lugar nenhum. Decisão do Erick (14/11/2026): prazo, mínimo, pagamento e retirada/entrega ficam para a conversa no WhatsApp; o site só diz isso. |
 | Retirada ou entrega | Não informado. O site diz só que “sabores, valores e disponibilidade são confirmados na conversa”. Perguntar se entrega e em quais cidades além de Alpinópolis. |
 | Telefone fixo funcionando | `(35) 3523-2501` vem da caixa; confirmar que ainda atende. |
 | Páscoa | Mostrada como coleção sazonal. Ao abrir uma campanha, mudar `pascoa.aberta` para `true`. |
