@@ -204,6 +204,13 @@ window.FOTOS = [
   "h": 1600
  },
  {
+  "id": "torta-frango",
+  "cat": "salgados",
+  "alt": "Fatia da torta de frango da Via Sabor, com frango desfiado e queijo derretido sob a massa dourada",
+  "w": 728,
+  "h": 910
+ },
+ {
   "id": "salgados-pasteis-coxinhas-quibes",
   "cat": "salgados",
   "alt": "Bandeja com pastéis, coxinhas e quibes",
