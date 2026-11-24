@@ -22,6 +22,7 @@ window.SITE = {
     { id: 'bolos', nome: 'Bolos', texto: 'Bolos decorados para aniversários, chás e datas especiais, com chantilly, raspas de chocolate, frutas e topos personalizados.' },
     { id: 'docinhos', nome: 'Doces e bombons', texto: 'Brigadeiros, bombons, docinhos em forminhas e sobremesas como o pavê de morango.' },
     { id: 'salgados', nome: 'Salgados', texto: 'Coxinhas, quibes, pastéis, empadinhas e minipizzas para festas e encontros.' },
+    { id: 'tortas', nome: 'Tortas', texto: 'Torta de frango, a mais conhecida da Via Sabor, e outras tortas salgadas sob encomenda.' },
   ],
 
   // Páscoa: aberta = true só quando houver campanha confirmada.

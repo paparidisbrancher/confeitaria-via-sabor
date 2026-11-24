@@ -61,7 +61,8 @@
   const INICIAIS = 12;
   const galeria = $('.galeria'), filtros = $('.filtros'), filtroTexto = $('.filtro-texto'), mais = $('.galeria-mais');
   // "Todos" intercala as categorias: bolo, docinho, salgado, bolo...
-  const usadas = new Set($$('main img').map((i) => (i.getAttribute('src').match(/img\/(.+)-\d+\.webp$/) || [])[1]));
+  // Foto usada fora da galeria não se repete nela, salvo [data-tambem-na-galeria] (a única foto de torta).
+  const usadas = new Set($$('main img:not([data-tambem-na-galeria])').map((i) => (i.getAttribute('src').match(/img\/(.+)-\d+\.webp$/) || [])[1]));
   const livres = FOTOS.filter((f) => !usadas.has(f.id));
   const porCat = S.categorias.map((c) => livres.filter((f) => f.cat === c.id));
   const produtos = [];
@@ -77,7 +78,7 @@
     galeria.dataset.lista = cat;
     $$('button', filtros).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
     const c = S.categorias.find((c) => c.id === cat);
-    filtroTexto.textContent = c ? c.texto : `${lista.length} fotos de bolos, doces e salgados.`;
+    filtroTexto.textContent = c ? c.texto : `${lista.length} fotos de bolos, doces, salgados e tortas.`;
   };
   filtros.innerHTML = [{ id: 'todos', nome: 'Todos' }, ...S.categorias]
     .map((c) => `<button type="button" data-cat="${c.id}" aria-pressed="false">${c.nome}</button>`).join('');

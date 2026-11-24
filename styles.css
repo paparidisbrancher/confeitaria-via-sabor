@@ -109,7 +109,8 @@ h1 em, h2 em { font-style: italic; color: var(--dourado-texto); }
 .menu a:not(.botao):hover::after { transform: scaleX(1); }
 .menu-botao { display: none; }
 
-@media (max-width: 1000px) {
+/* Com 6 links e "Encomendar no WhatsApp", o menu só cabe aberto a partir de 1180px */
+@media (max-width: 1180px) {
   .topo { height: 68px; gap: 10px; }
   .topo-encomendar { order: 2; padding: 10px 16px; }
   .menu-botao { order: 3; }
@@ -143,7 +144,7 @@ h1 em, h2 em { font-style: italic; color: var(--dourado-texto); }
   background: radial-gradient(120% 80% at 0% 100%, var(--chocolate-2) 0%, var(--chocolate) 62%); color: var(--papel);
 }
 .abertura-texto { align-self: center; padding: clamp(48px, 7vw, 96px) clamp(28px, 4vw, 72px) clamp(56px, 8vw, 104px) var(--miolo); }
-h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
+h1 { font-size: clamp(3rem, 4.4vw, 4.6rem); line-height: 1; }
 .apoio { color: var(--creme-texto); font-size: clamp(1.05rem, 1.4vw, 1.18rem); max-width: 40ch; margin: 28px 0 36px; }
 .abertura-foto { position: relative; margin: 0; min-height: 420px; }
 .abertura-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
@@ -154,6 +155,21 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .selo text { fill: var(--dourado-claro); font: 600 7.4px var(--texto); text-transform: uppercase; letter-spacing: 1.3px; }
 .selo .selo-coracao { fill: var(--dourado); }
 
+.kicker { margin-bottom: 18px; color: var(--dourado-claro); font: 600 .92rem/1.4 var(--texto); }
+.acoes-nota { flex-basis: 100%; order: 1; color: var(--creme-texto); font-size: .9rem; margin-top: -6px; }
+.acoes .link-seta { order: 2; }
+.acoes-nota span { white-space: nowrap; }
+.topo-encomendar { gap: 0; }
+.topo-longo { white-space: pre; }
+
+/* Celular: só o topo enxuto (logo, WhatsApp, Menu); horário fica no contato */
+@media (max-width: 767px) {
+  .barra-info { display: none; }
+  .topo { height: 60px; }
+  .marca img { height: 38px; }
+  .topo-longo { display: none; }
+}
+
 @media (max-width: 380px) {
   .marca img { height: 34px; }
   .topo-encomendar { padding: 10px 12px; }
@@ -161,18 +177,30 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
   .menu-botao { padding: 8px 10px; gap: 8px; }
 }
 
+/* Celular: foto baixa e sem selo, para título, botão, nota e link caberem na primeira tela */
 @media (max-width: 900px) {
   .abertura { grid-template-columns: 1fr; min-height: 0; }
-  .abertura-foto { order: -1; aspect-ratio: 16 / 11; min-height: 0; }
-  .abertura-foto img { object-position: 50% 50%; }
-  .abertura-texto { padding: 32px var(--lateral) 48px; }
-  .selo { left: auto; right: 16px; bottom: -40px; width: 92px; }
+  .abertura-foto { order: -1; height: clamp(200px, 26svh, 320px); min-height: 0; }
+  .abertura-foto img { object-position: 50% 45%; }
+  .abertura-texto { padding: 22px var(--lateral) 28px; }
+  .selo { display: none; }
+  .kicker { margin-bottom: 10px; font-size: .84rem; }
+  h1 { font-size: clamp(2.05rem, 8.6vw, 3.4rem); line-height: 1.04; }
+  .apoio { font-size: 1rem; line-height: 1.55; margin: 12px 0 18px; }
+  .acoes { gap: 6px 22px; }
+  .acoes .botao { width: 100%; }
+  .acoes-nota { margin-top: 0; font-size: .84rem; }
+  .acoes .link-seta { min-height: 40px; }
 }
 
-/* Faixa de texto correndo */
-.letreiro { overflow: hidden; padding: 16px 0; background: var(--chocolate-2); color: var(--dourado-claro); border-top: 1px solid rgba(221, 187, 120, .2); }
-.letreiro-trilho { display: flex; justify-content: center; padding: 0 var(--lateral); text-align: center; }
-.letreiro span { font: italic 400 clamp(1.4rem, 2.4vw, 2rem)/1.1 var(--serifa); }
+/* Faixa de prova logo abaixo da abertura */
+.provas {
+  list-style: none; margin: 0; padding: 18px var(--miolo); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 32px;
+  background: var(--chocolate-2); color: var(--creme-texto); border-top: 1px solid rgba(221, 187, 120, .2);
+  font: 500 .98rem/1.4 var(--texto);
+}
+.provas span { color: var(--dourado-claro); font-weight: 700; margin-right: 4px; }
+@media (max-width: 760px) { .provas { flex-direction: column; padding: 18px var(--lateral); font-size: .94rem; } }
 
 /* Seções */
 .secao { max-width: var(--largura); margin: 0 auto; padding: clamp(80px, 10vw, 136px) var(--lateral) clamp(88px, 11vw, 148px); }
@@ -184,12 +212,14 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 }
 
 /* Categorias em quadros */
-.cat-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cat-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .cat { position: relative; display: block; overflow: hidden; border-radius: var(--raio); color: var(--papel); text-decoration: none; isolation: isolate; }
 .cat img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.cat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 26, 18, 0) 42%, rgba(43, 26, 18, .88) 100%); }
-.cat-nome { position: absolute; left: 22px; right: 16px; bottom: 46px; z-index: 1; font: 400 clamp(1.5rem, 2.4vw, 2.2rem)/1.05 var(--serifa); }
-.cat-mais { position: absolute; left: 22px; bottom: 20px; z-index: 1; color: var(--dourado-claro); font: 600 .88rem var(--texto); }
+.cat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 26, 18, 0) 30%, rgba(43, 26, 18, .92) 100%); }
+.cat-texto { position: absolute; left: 20px; right: 16px; bottom: 18px; z-index: 1; display: grid; gap: 6px; }
+.cat-nome { font: 400 clamp(1.5rem, 2.2vw, 2rem)/1.05 var(--serifa); }
+.cat-desc { color: var(--creme-texto); font-size: .9rem; line-height: 1.35; }
+.cat-mais { color: var(--dourado-claro); font: 600 .88rem var(--texto); }
 .cat-mais span { display: inline-block; transition: transform .3s var(--suave); }
 @media (hover: hover) {
   .cat:hover { box-shadow: 0 0 0 2px var(--dourado); }
@@ -198,11 +228,13 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .cat:focus-visible { outline-offset: 4px; }
 @media (max-width: 760px) {
   .cat-lista { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .cat-lista li:nth-child(3) { grid-column: 1 / -1; }
-  .cat-lista li:nth-child(3) img { aspect-ratio: 8 / 5; }
-  .cat-nome { left: 14px; bottom: 38px; font-size: 1.35rem; }
-  .cat-mais { left: 14px; bottom: 14px; }
+  .cat img { aspect-ratio: 3 / 4; }
+  .cat-texto { left: 12px; right: 10px; bottom: 12px; gap: 4px; }
+  .cat-nome { font-size: 1.3rem; }
+  .cat-desc { font-size: .8rem; }
+  .cat-mais { font-size: .82rem; }
 }
+@media (min-width: 761px) and (max-width: 1000px) { .cat-lista { grid-template-columns: 1fr 1fr; } }
 
 /* A confeitaria: foto da caixa e cardápio */
 .historia {
@@ -259,6 +291,7 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 }
 .pascoa-texto { display: grid; gap: 18px; justify-items: start; }
 .pascoa-texto p { color: var(--creme-texto); }
+.pascoa-texto h2 { font-size: clamp(2rem, 3.2vw, 2.8rem); }
 .pascoa-aviso:empty { display: none; }
 .faixa {
   list-style: none; margin: 0; padding: 4px clamp(24px, 5vw, 72px) 16px 4px; display: flex; gap: 14px;
@@ -296,6 +329,24 @@ h1 { font-size: clamp(3rem, 6vw, 6.2rem); line-height: .98; }
 .canais a { display: inline-flex; align-items: center; min-height: 44px; font-size: 1.1rem; font-weight: 600; color: var(--tinta); overflow-wrap: anywhere; text-decoration-color: var(--dourado); text-decoration-thickness: 1px; }
 .canais [data-horarios] { white-space: pre-line; }
 .canal-rotulo { color: var(--dourado-texto); font-size: .86rem; font-weight: 700; }
+/* WhatsApp é o canal principal: ocupa a linha toda, em chocolate */
+.canais .canal-destaque { grid-column: 1 / -1; background: var(--chocolate); color: var(--creme-texto); padding: 28px 30px; }
+.canal-destaque .canal-rotulo { color: var(--dourado-claro); }
+.canal-destaque a { color: var(--papel); font: 400 clamp(1.9rem, 4vw, 2.6rem)/1.1 var(--serifa); text-decoration-color: var(--dourado-claro); }
+.canal-destaque :focus-visible { outline-color: var(--dourado-claro); }
+
+/* Dúvidas: acordeão nativo */
+.duvidas { padding-top: 0; }
+.duvidas-lista { max-width: 860px; border-top: 1px solid var(--linha); }
+.duvidas details { border-bottom: 1px solid var(--linha); }
+.duvidas summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 44px;
+  padding: 20px 0; cursor: pointer; list-style: none; font: 400 clamp(1.3rem, 2vw, 1.6rem)/1.2 var(--serifa);
+}
+.duvidas summary::-webkit-details-marker { display: none; }
+.duvidas summary::after { content: "+"; flex-shrink: 0; color: var(--dourado-texto); font: 400 1.8rem/1 var(--texto); transition: transform .2s var(--saida); }
+.duvidas details[open] summary::after { transform: rotate(45deg); }
+.duvidas details p { padding: 0 0 22px; color: var(--tinta-suave); max-width: 68ch; }
 
 .rodape {
   display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center;

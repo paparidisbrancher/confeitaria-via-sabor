@@ -31,4 +31,7 @@ Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http
 | Telefone fixo funcionando | Atende (Erick, 20/11/2026), mas o foco do site é o WhatsApp. |
 | Páscoa | Mostrada como coleção sazonal. Ao abrir uma campanha, mudar `pascoa.aberta` para `true`. |
 | Uso das fotos | Autorizado pela confeitaria (Erick, 20/11/2026). |
+| 5º docinho | O cardápio dizia só "Docinho"; saiu do site em 24/11/2026 (TODO no `index.html`) até a confeitaria dizer o nome. |
+| Foto da caixa (A confeitaria) | A caixa impressa mostra o nº antigo 181; trocar por foto com a caixa nova quando houver. |
+| Torta de frango | Única foto de torta: aparece no quadro "Tortas salgadas" e na galeria (filtro Tortas) — exceção à regra de não repetir foto até chegar outra. |
 | Mais fotos | Sem login, o Instagram mostra só as 12 publicações mais recentes (o perfil tem 79). Com acesso logado dá para buscar mais. |
