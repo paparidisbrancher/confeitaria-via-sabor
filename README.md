@@ -29,7 +29,7 @@ Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http
 | Prazo de encomenda | Não informado em lugar nenhum. Decisão do Erick (14/11/2026): prazo, mínimo, pagamento e retirada/entrega ficam para a conversa no WhatsApp; o site só diz isso. |
 | Retirada ou entrega | Não mencionar no site; a pessoa pergunta no WhatsApp (Erick, 20/11/2026). |
 | Telefone fixo funcionando | Atende (Erick, 20/11/2026), mas o foco do site é o WhatsApp. |
-| Páscoa | Mostrada como coleção sazonal. Ao abrir uma campanha, mudar `pascoa.aberta` para `true`. |
+| Páscoa | Mostrada como coleção sazonal; faz ovos de colher e tradicionais (Erick, 24/11/2026). Ao abrir uma campanha, mudar `pascoa.aberta` para `true`. |
 | Uso das fotos | Autorizado pela confeitaria (Erick, 20/11/2026). |
 | 5º docinho | O cardápio dizia só "Docinho"; saiu do site em 24/11/2026 (TODO no `index.html`) até a confeitaria dizer o nome. |
 | Foto da caixa (A confeitaria) | A caixa impressa mostra o nº antigo 181; trocar por foto com a caixa nova quando houver. |
