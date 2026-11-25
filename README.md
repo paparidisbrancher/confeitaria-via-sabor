@@ -4,7 +4,9 @@ No ar em https://confeitariaviasabor.com.br (GitHub Pages, domínio no Registro.
 
 Site estático (HTML, CSS e JS, sem build). Para ver localmente: `python -m http.server` nesta pasta.
 
-- Dados de contato, horário, categorias e Páscoa: `config.js`.
+- Telefones, endereço e horário: escritos direto no `index.html` (barra do topo, contato, rodapé, JSON-LD e FAQ) e no `llms.txt`, para robôs que não rodam JavaScript também lerem. Mudou um, mude todos.
+- WhatsApp dos botões, categorias da galeria e Páscoa: `config.js`.
+- SEO: JSON-LD (`WebSite`, `Bakery` com cardápio, `FAQPage` igual à seção Dúvidas) no `<head>`; `llms.txt`, `robots.txt` e `sitemap.xml` na raiz. Sem preço, `priceRange` ou nota de avaliação.
 - Fotos: `assets/img/` (WebP 480 e 900 px; a foto do topo, `bolo-calda-frutas-capa`, em 480/900/1172 — versão melhorada da foto do Instagram do bolo com calda, morangos e uvas, enviada pelo Erick em 03/11/2026) e a lista em `assets/fotos.js`.
   As fotos em formato de story vieram dos destaques do Instagram; as seis com nomes como
   `bolo-40-anos-chocolate`, `bolo-dourado`, `bolo-raspas-chocolate-morangos`,

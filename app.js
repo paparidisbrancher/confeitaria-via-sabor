@@ -19,35 +19,7 @@
     if (e.key === 'Escape' && menu.classList.contains('aberto')) { fecharMenu(); menuBotao.focus(); }
   });
 
-  // Contatos a partir da configuração
-  $$('[data-instagram]').forEach((a) => { a.href = igUrl; });
-  const mostrar = (campo) => { $(`[data-campo="${campo}"]`).hidden = false; };
-  if (S.telefone) {
-    const a = $('[data-telefone]');
-    a.textContent = S.telefone;
-    a.href = 'tel:+55' + S.telefone.replace(/\D/g, '');
-    mostrar('telefone');
-  }
-  if (S.whatsapp) {
-    $('[data-whatsapp-contato]').href = `https://wa.me/${S.whatsapp}`;
-    // '5535984021792' vira '(35) 98402-1792'
-    $$('[data-wa-numero]').forEach((a) => { a.textContent = S.whatsapp.replace(/^55(\d\d)(\d{4,5})(\d{4})$/, '($1) $2-$3'); });
-    mostrar('whatsapp');
-  }
-  if (S.endereco) {
-    $('[data-endereco]').textContent = `${S.endereco}, ${S.cidade} (${S.estado})`;
-    $('[data-mapa]').href = 'https://www.google.com/maps/search/?api=1&query=' +
-      encodeURIComponent(`${S.nome}, ${S.endereco}, ${S.cidade} - ${S.estado}`);
-    mostrar('endereco');
-  }
-  if (S.horarios) {
-    // No cartão de contato, cada dia fica numa linha
-    $$('[data-horarios]').forEach((el) => {
-      el.textContent = el.closest('.canais') ? S.horarios.replaceAll(' · ', '\n') : S.horarios;
-      el.hidden = false;
-    });
-    mostrar('horarios');
-  }
+  // Telefones, endereço e horário ficam fixos no index.html (robôs sem JS também leem).
   if (S.pascoa.aberta) $('[data-pascoa]').textContent = 'A coleção desta Páscoa está aberta para consultas.';
 
   // Fotos
@@ -105,6 +77,7 @@
 
   // Foto ampliada
   const dlg = $('.ampliar'), dImg = document.createElement('img'), dCap = $('figcaption', dlg), dCont = $('.ampliar-contagem', dlg);
+  dImg.decoding = 'async'; // abrir/trocar a foto não espera a decodificação (INP)
   $('figure', dlg).prepend(dImg);
   let indice = 0, origem = null;
   const exibir = (i) => {

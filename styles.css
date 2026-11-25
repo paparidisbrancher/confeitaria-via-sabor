@@ -327,7 +327,6 @@ h1 { font-size: clamp(3rem, 4.4vw, 4.6rem); line-height: 1; }
 .canais { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
 .canais li { display: grid; gap: 6px; align-content: start; padding: 24px 26px; background: var(--creme); border-radius: var(--raio); }
 .canais a { display: inline-flex; align-items: center; min-height: 44px; font-size: 1.1rem; font-weight: 600; color: var(--tinta); overflow-wrap: anywhere; text-decoration-color: var(--dourado); text-decoration-thickness: 1px; }
-.canais [data-horarios] { white-space: pre-line; }
 .canal-rotulo { color: var(--dourado-texto); font-size: .86rem; font-weight: 700; }
 /* WhatsApp é o canal principal: ocupa a linha toda, em chocolate */
 .canais .canal-destaque { grid-column: 1 / -1; background: var(--chocolate); color: var(--creme-texto); padding: 28px 30px; }
@@ -344,6 +343,7 @@ h1 { font-size: clamp(3rem, 4.4vw, 4.6rem); line-height: 1; }
   padding: 20px 0; cursor: pointer; list-style: none; font: 400 clamp(1.3rem, 2vw, 1.6rem)/1.2 var(--serifa);
 }
 .duvidas summary::-webkit-details-marker { display: none; }
+.duvidas summary h3 { margin: 0; font: inherit; }
 .duvidas summary::after { content: "+"; flex-shrink: 0; color: var(--dourado-texto); font: 400 1.8rem/1 var(--texto); transition: transform .2s var(--saida); }
 .duvidas details[open] summary::after { transform: rotate(45deg); }
 .duvidas details p { padding: 0 0 22px; color: var(--tinta-suave); max-width: 68ch; }
@@ -379,11 +379,7 @@ h1 { font-size: clamp(3rem, 4.4vw, 4.6rem); line-height: 1; }
 
 /* Movimento: só para quem não pediu menos animação */
 @media (prefers-reduced-motion: no-preference) {
-  .abertura-texto > * { animation: subir .9s var(--suave) both; }
-  .abertura-texto > :nth-child(2) { animation-delay: .08s; }
-  .abertura-texto > :nth-child(3) { animation-delay: .16s; }
-  .abertura-texto > :nth-child(4) { animation-delay: .24s; }
-  .abertura-foto img { animation: revelar 1.3s cubic-bezier(.7, 0, .2, 1) both; }
+  /* Sem animação de entrada no título, no texto e na foto da abertura: elas atrasavam o LCP em 1 s ou mais. */
   .selo { animation: subir .9s .5s var(--suave) both; }
   .selo text { transform-origin: 50px 50px; animation: girar 22s linear infinite; }
   .revelar-ok [data-revelar] { transition: opacity .9s var(--suave), transform .9s var(--suave); }
@@ -392,7 +388,6 @@ h1 { font-size: clamp(3rem, 4.4vw, 4.6rem); line-height: 1; }
   .cat-lista li:nth-child(3) { transition-delay: .16s; }
   .cat-lista li:nth-child(4) { transition-delay: .24s; }
   @keyframes subir { from { opacity: 0; transform: translateY(28px); } }
-  @keyframes revelar { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0); } }
   @keyframes girar { to { transform: rotate(360deg); } }
 }
 @media (prefers-reduced-motion: reduce) {
